@@ -49,4 +49,18 @@ class homeControl extends Controller
         return redirect('/');
     }
     
+    function viewdetail()
+    {
+        $data = Project_manager::join('project','project.id','=','project_manager.id')
+                                ->join('users','users.id','=','pm.id')
+                                ->get(['project.id','project_manager.id','project.startDate','project.endDate','project.Duration','project.Cost','project.client','project.stage','project.status','project_manager.ptype','project_manager.pname','users.name']);
+
+        return view('manage', compact('data'));
+    }
+
+    function showdetail($id)
+    {
+        $data=Project::find($id);
+        return view ('update');
+    }
 }

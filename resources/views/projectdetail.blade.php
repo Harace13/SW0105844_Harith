@@ -53,7 +53,7 @@ https://templatemo.com/tm-545-finance-business
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#top">Home
+                <a class="nav-link" href="/">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -61,7 +61,11 @@ https://templatemo.com/tm-545-finance-business
                     <li class="nav-item">
                 <a class="nav-link" href="">Project Details</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/manageproject">Manage Project Details</a>
+              </li>
               @endauth
+
             </ul>
             <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
@@ -131,7 +135,7 @@ https://templatemo.com/tm-545-finance-business
   @foreach($member as $x)
 <option value="{{$x['pmID']}}">{{$x['pname']}}</option>
     @endforeach
-</select><br>
+</select><br><br>
 <button type="submit" class="btn btn-primary">Create</button>
 </form>
 </div>

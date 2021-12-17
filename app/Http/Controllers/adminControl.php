@@ -34,9 +34,6 @@ class adminControl extends Controller
 
     function managepage()
     {
-        $data = User::join('project_manager','project_manager.id','=','users.id')
-                                ->get(['users.name','project_manager.ptype','project_manager.pname']);
-
-        return view('admin.manageproj', compact('data'));
+        
     }
 }

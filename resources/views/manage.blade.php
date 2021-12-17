@@ -98,9 +98,41 @@ https://templatemo.com/tm-545-finance-business
           <div class="item item-1">
             <div class="img-fill">
                 <div class="text-content">
-                  <h6>we are ready to help you manage</h6>
-                  <h4>Research &amp;<br> Consultancy Project</h4>
-                  <p>This projects is a commercial arm of UNITEN and carried out by UNITEN academic staff</p>
+                <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Project Detail ID</th>
+      <th scope="col">Project Type</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Project Leader</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Stage</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($data as $x)
+    <tr>
+      <th scope="row">{{$x->projID}}</th>
+      <td>{{ $x->ptype }}</td>
+      <td>{{ $x->pname }}</td>
+      <td>{{ $x->name}}</td>
+      <td>{{ $x->startDate }}</td>
+      <td>{{ $x->endDate }}</td>
+      <td>{{ $x->Duration}}</td>
+      <td>{{ $x->Cost }}</td>
+      <td>{{ $x->client }}</td>
+      <td>{{ $x->stage}}</td>
+      <td>{{ $x->status }}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
                 </div>
             </div>
           </div>

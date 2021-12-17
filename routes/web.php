@@ -24,6 +24,10 @@ Route::get('/projectdetailadd',[homeControl::class,"manageadd"]);
 
 Route::POST("pdetail",[homeControl::class,'pdetail']);
 
+Route::get('upd/{projID}',[homeControl::class,'showpro']);
+
+Route::get('/manageproject',[homeControl::class,'viewdetail']);
+
 /* ========================= adminControl ============================ */
 Route::get("/createproject",[adminControl::class,"createpage"]);
 
