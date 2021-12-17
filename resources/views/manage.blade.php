@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    
+            
 <!--
 
 Finance Business TemplateMo
@@ -98,13 +100,12 @@ https://templatemo.com/tm-545-finance-business
           <div class="item item-1">
             <div class="img-fill">
                 <div class="text-content">
-                <table class="table">
+                <table class="table" style="background-color:white">
   <thead>
     <tr>
       <th scope="col">Project Detail ID</th>
       <th scope="col">Project Type</th>
       <th scope="col">Project Name</th>
-      <th scope="col">Project Leader</th>
       <th scope="col">Start Date</th>
       <th scope="col">End Date</th>
       <th scope="col">Duration</th>
@@ -118,10 +119,9 @@ https://templatemo.com/tm-545-finance-business
   <tbody>
   @foreach($data as $x)
     <tr>
-      <th scope="row">{{$x->projID}}</th>
+      <th scope="row">{{$x->id}}</th>
       <td>{{ $x->ptype }}</td>
       <td>{{ $x->pname }}</td>
-      <td>{{ $x->name}}</td>
       <td>{{ $x->startDate }}</td>
       <td>{{ $x->endDate }}</td>
       <td>{{ $x->Duration}}</td>
@@ -129,10 +129,12 @@ https://templatemo.com/tm-545-finance-business
       <td>{{ $x->client }}</td>
       <td>{{ $x->stage}}</td>
       <td>{{ $x->status }}</td>
+      <td><a href={{"upd/".$x['id']}}>Update</a>
     </tr>
     @endforeach
   </tbody>
 </table>
+
                 </div>
             </div>
           </div>

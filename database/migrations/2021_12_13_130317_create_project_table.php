@@ -14,7 +14,7 @@ class CreateProjectTable extends Migration
     public function up()
     {
         Schema::create('Project', function (Blueprint $table) {
-            $table->bigIncrements('projID');
+            $table->bigIncrements('id');
             $table->bigInteger('pmID')->unsigned()->index()->nullable();
             $table->foreign('pmID')->references('projID')->on('project_managers');
             $table->string('startDate');

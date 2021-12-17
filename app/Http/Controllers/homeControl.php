@@ -51,16 +51,31 @@ class homeControl extends Controller
     
     function viewdetail()
     {
-        $data = Project_manager::join('project','project.id','=','project_manager.id')
-                                ->join('users','users.id','=','pm.id')
-                                ->get(['project.id','project_manager.id','project.startDate','project.endDate','project.Duration','project.Cost','project.client','project.stage','project.status','project_manager.ptype','project_manager.pname','users.name']);
-
+        $data = Project_manager::join('project','project.id','=','project_manager.pmID')
+                                ->get(['project.id','project_manager.ptype','project.startDate','project.endDate','project_manager.pname','project.Duration','project.Cost','project.client','project.stage','project.status']);
+        
         return view('manage', compact('data'));
     }
 
-    function showdetail($id)
+    function showpro($id)
     {
         $data=Project::find($id);
-        return view ('update');
+        return view ('update',['disp'=>$data]);
+    }
+
+    function update(Request $req)
+    {
+        $member=Project::find($req->id);
+        $member->startDate = $req->startDate ;
+        $member->endDate = $req->endDate ;
+        $member->Duration = $req->Duration ;
+        $member->Cost = $req->Cost ;
+        $member->client = $req->client ;
+        $member->stage = $req->stage ;
+        $member->status = $req->status ;
+        $member->save();
+
+        return redirect('manageproj');
+
     }
 }

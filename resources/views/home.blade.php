@@ -61,7 +61,7 @@ https://templatemo.com/tm-545-finance-business
                 <a class="nav-link" href="/projectdetail">Project Details</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/manageproject">Manage Project Details</a>
+                <a class="nav-link" href="/manageproj">Manage Project Details</a>
               </li>
               @endauth
             </ul>

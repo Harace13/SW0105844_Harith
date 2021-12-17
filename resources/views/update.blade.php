@@ -101,42 +101,38 @@ https://templatemo.com/tm-545-finance-business
             <div class="img-fill">
                 <div class="text-content">
                 <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;">
-      
-                <form action="/pdetail" method="post">
+      <h2>Update Project</h2>
+                <form action="/edit" method="post">
             @csrf 
   <div class="form-group">
-  
+  <label for="id">Project ID:</label>
+  <input type="text" class="" id="id" name="id" value="{{$disp['id']}}" readonly> <br><br>
   <label for="startDate">Start Date:</label>
-  <input type="date" class="" id="startDate" name="startDate" placeholder="Enter Start Date">
+  <input type="date" class="" id="startDate" name="startDate" value="{{$disp['startDate']}}">
   <label for="endDate">End Date:</label>
-  <input type="date" class="" id="endDate" name="endDate" placeholder="Enter End Date"><br><br>
+  <input type="date" class="" id="endDate" name="endDate" value="{{$disp['endDate']}}"><br><br>
   <label for="Duration">Duration:</label>
-  <input type="text" class="" id="Duration" name="Duration" placeholder="Enter Duration">
+  <input type="text" class="" id="Duration" name="Duration" value="{{$disp['Duration']}}">
   <label for="Cost">Cost:</label>
-  <input type="text" class="" id="Cost" name="Cost" placeholder="Enter Cost (RM)"><br><br>
+  <input type="text" class="" id="Cost" name="Cost" value="{{$disp['Cost']}}"><br><br>
   <label for="client">Client Name:</label>
-  <input type="text" class="" id="client" name="client" placeholder="Enter client name "><br><br>
+  <input type="text" class="" id="client" name="client" value="{{$disp['client']}}"><br><br>
   <label for="stage">Project Stage:</label>
-  <select name="stage" id="stage">
+  <select name="stage" id="stage" value="{{$disp['stage']}}">
   <option value="Inception">Inception</option>
   <option value="Milestone 1">Milestone 1</option>
   <option value="Milestone 2">Milestone 2</option>
   <option value="Final Report">Final Report</option>
 </select>
 <label for="status">Project Status:</label>
-<select name="status" id="status">
+<select name="status" id="status" value="{{$disp['status']}}">
   <option value="On track">On track</option>
   <option value="Delayed">Delayed</option>
   <option value="Extended">Extended</option>
   <option value="Completed">Completed</option>
 </select><br><br>
-<label for="pname">Choose Project Name:</label>
-<select name="pname" id="pname"><br>
-  @foreach($member as $x)
-<option value="{{$x['pmID']}}">{{$x['pname']}}</option>
-    @endforeach
-</select><br><br>
-<button type="submit" class="btn btn-primary">Create</button>
+<button type="submit" class="btn btn-primary">Update</button>
+<button type="reset" class="btn btn-primary">Reset</button>
 </form>
 </div>
                 </div>
