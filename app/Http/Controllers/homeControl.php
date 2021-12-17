@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Project_manager;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Auth;
 class homeControl extends Controller
@@ -28,8 +29,24 @@ class homeControl extends Controller
 
     function detail()
     {
-        return view('projectdetail');
+        $data=Project_manager::all();
+        return view('projectdetail',['member'=>$data]);
     }
 
+    function pdetail(Request $req)
+    {
+        $member = new Project ;
+        $member->startDate = $req->startDate ;
+        $member->endDate = $req->endDate ;
+        $member->Duration = $req->Duration ;
+        $member->Cost = $req->Cost ;
+        $member->client = $req->client ;
+        $member->stage = $req->stage ;
+        $member->status = $req->status ;
+        $member->pmID = $req->pname ;
+        $member->save();
+
+        return redirect('/');
+    }
     
 }

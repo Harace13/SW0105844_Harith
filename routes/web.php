@@ -20,6 +20,10 @@ Route::get("/redirect",[homeControl::class,"redirectFunct"]);
 
 Route::get('/projectdetail',[homeControl::class,"detail"]);
 
+Route::get('/projectdetailadd',[homeControl::class,"manageadd"]);
+
+Route::POST("pdetail",[homeControl::class,'pdetail']);
+
 /* ========================= adminControl ============================ */
 Route::get("/createproject",[adminControl::class,"createpage"]);
 
@@ -28,8 +32,6 @@ Route::get("/manageproject",[adminControl::class,"managepage"]);
 Route::get("/list",[adminControl::class,"show"]);
 
 Route::POST("create",[adminControl::class,'create']);
-
-Route::get('del/{pmID}',[adminControl::class,'deleteproj']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

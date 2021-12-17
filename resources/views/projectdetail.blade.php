@@ -96,51 +96,44 @@ https://templatemo.com/tm-545-finance-business
           <div class="item item-1">
             <div class="img-fill">
                 <div class="text-content">
-                <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;margin-top:50px;">
+                <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;">
       
-  <form action="/submit_detail.php" post="">
-  <div class="row">
-    <div class="col-25">
-      <label for="fname">First Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="lname">Last Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="country">Country</label>
-    </div>
-    <div class="col-75">
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="subject">Subject</label>
-    </div>
-    <div class="col-75">
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <input type="submit" value="Submit">
-  </div>
-  </form>
-</table>
+                <form action="/pdetail" method="post">
+            @csrf 
+  <div class="form-group">
+  
+  <label for="startDate">Start Date:</label>
+  <input type="date" class="" id="startDate" name="startDate" placeholder="Enter Start Date">
+  <label for="endDate">End Date:</label>
+  <input type="date" class="" id="endDate" name="endDate" placeholder="Enter End Date"><br><br>
+  <label for="Duration">Duration:</label>
+  <input type="text" class="" id="Duration" name="Duration" placeholder="Enter Duration">
+  <label for="Cost">Cost:</label>
+  <input type="text" class="" id="Cost" name="Cost" placeholder="Enter Cost (RM)"><br><br>
+  <label for="client">Client Name:</label>
+  <input type="text" class="" id="client" name="client" placeholder="Enter client name "><br><br>
+  <label for="stage">Project Stage:</label>
+  <select name="stage" id="stage">
+  <option value="Inception">Inception</option>
+  <option value="Milestone 1">Milestone 1</option>
+  <option value="Milestone 2">Milestone 2</option>
+  <option value="Final Report">Final Report</option>
+</select>
+<label for="status">Project Status:</label>
+<select name="status" id="status">
+  <option value="On track">On track</option>
+  <option value="Delayed">Delayed</option>
+  <option value="Extended">Extended</option>
+  <option value="Completed">Completed</option>
+</select><br><br>
+<label for="pname">Choose Project Name:</label>
+<select name="pname" id="pname"><br>
+  @foreach($member as $x)
+<option value="{{$x['pmID']}}">{{$x['pname']}}</option>
+    @endforeach
+</select><br>
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
 </div>
                 </div>
             </div>

@@ -39,12 +39,4 @@ class adminControl extends Controller
 
         return view('admin.manageproj', compact('data'));
     }
-
-    function deleteproj($id)
-    {
-        $data = Project_manager::find($id);
-        $data->delete();
-        return redirect('/manageproject');
-    }
-
 }

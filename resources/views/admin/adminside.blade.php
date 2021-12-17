@@ -10,12 +10,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/manageproject">
-                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
-                <span class="menu-title">Manage Project</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/list">
                 <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
                 <span class="menu-title">List of User</span>

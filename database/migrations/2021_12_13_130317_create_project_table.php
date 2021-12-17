@@ -17,7 +17,6 @@ class CreateProjectTable extends Migration
             $table->bigIncrements('projID');
             $table->bigInteger('pmID')->unsigned()->index()->nullable();
             $table->foreign('pmID')->references('projID')->on('project_managers');
-            $table->string('projName');
             $table->string('startDate');
             $table->string('endDate');
             $table->string('Duration');
@@ -35,6 +34,7 @@ class CreateProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project');
+        $table->dropForeign('pmID');
+        $table->dropColumn('pmID');
     }
 }
