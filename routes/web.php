@@ -20,15 +20,13 @@ Route::get("/redirect",[homeControl::class,"redirectFunct"]);
 
 Route::get('/projectdetail',[homeControl::class,"detail"]);
 
-Route::get('/projectdetailadd',[homeControl::class,"manageadd"]);
-
 Route::POST("pdetail",[homeControl::class,'pdetail']);
 
-Route::get('upd/{id}',[homeControl::class,'showpro']);
+Route::get('updateleader/{id}',[homeControl::class,'updatedetails']);
 
-Route::get('/manageproj',[homeControl::class,'viewdetail']);
+Route::get("view/{id}",[homeControl::class,'view']);
 
-Route::post("/edit",[homeControl::class,'update']);
+Route::POST("edit",[homeControl::class,'updatepdetails']);
 
 /* ========================= adminControl ============================ */
 Route::get("/createproject",[adminControl::class,"createpage"]);

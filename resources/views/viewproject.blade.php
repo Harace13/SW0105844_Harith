@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/flex-slider.css">
 <!--
 
 Finance Business TemplateMo
@@ -52,15 +53,19 @@ https://templatemo.com/tm-545-finance-business
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#top">Home
+                <a class="nav-link" href="/">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               @auth
                     <li class="nav-item">
-                <a class="nav-link" href="/projectdetail">Project Details</a>
+                <a class="nav-link" href="">Project Details</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/manageproj">Manage Project Details</a>
               </li>
               @endauth
+
             </ul>
             <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
@@ -95,9 +100,46 @@ https://templatemo.com/tm-545-finance-business
           <div class="item item-1">
             <div class="img-fill">
                 <div class="text-content">
-                  <h6>we are ready to help you manage</h6>
-                  <h4>Research &amp;<br> Consultancy Project</h4>
-                  <p>This projects is a commercial arm of UNITEN and carried out by UNITEN academic staff</p>
+                <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;">
+            @csrf 
+            <div class="row form-group">
+                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">Start Date</label></div>
+                    <div class="col-12 col-md-9"><input type="date" id="rd" name="sd" value="{{$x['startDate']}}" class="form-control"disabled><small class="help-block form-text"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">End Date</label></div>
+                    <div class="col-12 col-md-9"><input type="date" id="rd" name="ed" value="{{$x['endDate']}}" class="form-control" disabled><small class="help-block form-text"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="duration" value="{{$x['duration']}} month"  class="form-control"disabled><small class="form-text text-muted"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cost</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="cost" value="RM {{$x['cost']}}"  class="form-control" disabled><small class="form-text text-muted"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Client Name</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="client" value="{{$x['client']}}"  class="form-control"disabled><small class="form-text text-muted"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="select" class=" form-control-label">Project stage</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="progress" value="{{$x['stage']}}"  class="form-control"disabled><small class="form-text text-muted"></small></div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="select" class=" form-control-label">Project Status</label></div>
+                    <div class="col-12 col-md-9"><div class="col-12 col-md-9"><input type="text" id="text-input" name="status" value="{{$x['status']}}"  class="form-control"disabled><small class="form-text text-muted"></small></div>
+                    </div>
+                </div>
+</form>
+</div>
                 </div>
             </div>
           </div>

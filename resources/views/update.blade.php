@@ -26,6 +26,7 @@ Finance Business TemplateMo
 https://templatemo.com/tm-545-finance-business
 
 -->
+
   </head>
 
   <body>
@@ -101,20 +102,23 @@ https://templatemo.com/tm-545-finance-business
             <div class="img-fill">
                 <div class="text-content">
                 <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;">
-      <h2>Update Project</h2>
                 <form action="/edit" method="post">
             @csrf 
   <div class="form-group">
-  <label for="id">Project ID:</label>
-  <input type="text" class="" id="id" name="id" value="{{$disp['id']}}" readonly> <br><br>
+  <label for="projectid">Project ID:</label>
+  <input type="text" class="" id="id" name="id" value="{{$disp['id']}}" readonly><br>
+  <label for="ptype">Project Type:</label>
+  <input type="text" class="" id="ptype" name="ptype" value="{{$disp['ptype']}}" readonly> <br>
+  <label for="pname">Project Name:</label>
+  <input type="text" class="" id="pname" name="pname" value="{{$disp['pname']}}" readonly> <br>
   <label for="startDate">Start Date:</label>
   <input type="date" class="" id="startDate" name="startDate" value="{{$disp['startDate']}}">
   <label for="endDate">End Date:</label>
   <input type="date" class="" id="endDate" name="endDate" value="{{$disp['endDate']}}"><br><br>
-  <label for="Duration">Duration:</label>
-  <input type="text" class="" id="Duration" name="Duration" value="{{$disp['Duration']}}">
-  <label for="Cost">Cost:</label>
-  <input type="text" class="" id="Cost" name="Cost" value="{{$disp['Cost']}}"><br><br>
+  <label for="duration">Duration:</label>
+  <input type="text" class="" id="duration" name="duration" value="{{$disp['duration']}}">
+  <label for="cost">Cost:</label>
+  <input type="text" class="" id="cost" name="cost" value="{{$disp['cost']}}"><br><br>
   <label for="client">Client Name:</label>
   <input type="text" class="" id="client" name="client" value="{{$disp['client']}}"><br><br>
   <label for="stage">Project Stage:</label>

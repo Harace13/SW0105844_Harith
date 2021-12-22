@@ -105,38 +105,31 @@ https://templatemo.com/tm-545-finance-business
                 <form action="/pdetail" method="post">
             @csrf 
   <div class="form-group">
-  
-  <label for="startDate">Start Date:</label>
-  <input type="date" class="" id="startDate" name="startDate" placeholder="Enter Start Date">
-  <label for="endDate">End Date:</label>
-  <input type="date" class="" id="endDate" name="endDate" placeholder="Enter End Date"><br><br>
-  <label for="Duration">Duration:</label>
-  <input type="text" class="" id="Duration" name="Duration" placeholder="Enter Duration">
-  <label for="Cost">Cost:</label>
-  <input type="text" class="" id="Cost" name="Cost" placeholder="Enter Cost (RM)"><br><br>
-  <label for="client">Client Name:</label>
-  <input type="text" class="" id="client" name="client" placeholder="Enter client name "><br><br>
-  <label for="stage">Project Stage:</label>
-  <select name="stage" id="stage">
-  <option value="Inception">Inception</option>
-  <option value="Milestone 1">Milestone 1</option>
-  <option value="Milestone 2">Milestone 2</option>
-  <option value="Final Report">Final Report</option>
-</select>
-<label for="status">Project Status:</label>
-<select name="status" id="status">
-  <option value="On track">On track</option>
-  <option value="Delayed">Delayed</option>
-  <option value="Extended">Extended</option>
-  <option value="Completed">Completed</option>
-</select><br><br>
-<label for="pname">Choose Project Name:</label>
-<select name="pname" id="pname"><br>
-  @foreach($member as $x)
-<option value="{{$x['pmID']}}">{{$x['pname']}}</option>
-    @endforeach
-</select><br><br>
-<button type="submit" class="btn btn-primary">Create</button>
+  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+  <thead>              
+   <tr>
+      <th>Project ID</th>
+      <th>Project Type</th>
+      <th>Project Name</th>
+      <th>Project Leader</th>
+                                
+      <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      @foreach ($member as $x)
+       <tr>
+          <td scope="row">{{ $x['id'] }}</td>
+          <td>{{$x['ptype']}} </td>
+          <td>{{$x['pname']}}</td>                
+          <td>{{$x['pleader']}}</td>
+            <td> <a href="{{"view/".$x['id']}}"><button type="button" class="btn btn-warning">View </button></a> </href> 
+<a href="{{"updateleader/".$x['id']}}"><button type="button" class="btn btn-primary">Edit </button></a> </href>     
+            </td>
+             </tr>
+  @endforeach
+  </tr>
+   </tbody>   
 </form>
 </div>
                 </div>

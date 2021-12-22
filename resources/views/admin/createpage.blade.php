@@ -31,7 +31,7 @@
   <label for="pleader">Choose Project Leader:</label><br>
 <select name="pleader" id="pleader">
 @foreach($member as $x)
-<option value="{{$x['id']}}">{{$x['name']}}</option>
+<option value="{{$x['name']}}">{{$x['name']}}</option>
     @endforeach
     
 </select> <br><br>

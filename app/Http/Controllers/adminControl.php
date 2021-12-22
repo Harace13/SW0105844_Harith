@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Project_manager;
+use App\Models\Project;
 
 class adminControl extends Controller
 {
@@ -16,24 +16,13 @@ class adminControl extends Controller
 
     function create(Request $req)
     {
-        $member = new Project_manager ;
+        $member = new Project ;
         $member->ptype = $req->ptype ;
         $member->pname = $req->pname ;
-        $member->id = $req->pleader ;
+        $member->pleader = $req->pleader ;
         $member->save();
 
         return redirect('/createproject');
     }
     
-    function show()
-    {
-        $data=user::all();
-        return view('admin.adminlist',['member'=>$data]);
-        
-    }
-
-    function managepage()
-    {
-        
-    }
 }
