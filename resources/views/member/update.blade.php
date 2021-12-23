@@ -7,18 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" type="text/css">
 
     <title>UNITEN R&D SDN BHD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/flex-slider.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/css/templatemo-finance-business.css">
+    <link rel="stylesheet" href="/assets/css/owl.css">
 <!--
 
 Finance Business TemplateMo
@@ -26,7 +25,6 @@ Finance Business TemplateMo
 https://templatemo.com/tm-545-finance-business
 
 -->
-
   </head>
 
   <body>
@@ -60,13 +58,9 @@ https://templatemo.com/tm-545-finance-business
               </li>
               @auth
                     <li class="nav-item">
-                <a class="nav-link" href="">Project Details</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/manageproj">Manage Project Details</a>
+                <a class="nav-link" href="/projectdetail">Project Details</a>
               </li>
               @endauth
-
             </ul>
             <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
@@ -92,7 +86,7 @@ https://templatemo.com/tm-545-finance-business
         </div>
       </nav>
     </header>
-
+    
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="main-banner header-text" id="top">
@@ -101,23 +95,25 @@ https://templatemo.com/tm-545-finance-business
           <div class="item item-1">
             <div class="img-fill">
                 <div class="text-content">
-                <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;">
+                <div class="container" style="border-radius: 5px; background-color: #ededed;margin-top: 10%;">
                 <form action="/edit" method="post">
             @csrf 
   <div class="form-group">
+    <br>
+    <h1>UPDATE PROJECT DETAILS</h1><br>
   <label for="projectid">Project ID:</label>
-  <input type="text" class="" id="id" name="id" value="{{$disp['id']}}" readonly><br>
+  <input type="text" class="" id="id" name="id" value="{{$disp['id']}}" readonly><br><br>
   <label for="ptype">Project Type:</label>
-  <input type="text" class="" id="ptype" name="ptype" value="{{$disp['ptype']}}" readonly> <br>
+  <input type="text" class="" id="ptype" name="ptype" value="{{$disp['ptype']}}" readonly> <br><br>
   <label for="pname">Project Name:</label>
-  <input type="text" class="" id="pname" name="pname" value="{{$disp['pname']}}" readonly> <br>
+  <input type="text" class="" id="pname" name="pname" value="{{$disp['pname']}}" readonly> <br><br>
   <label for="startDate">Start Date:</label>
-  <input type="date" class="" id="startDate" name="startDate" value="{{$disp['startDate']}}">
+  <input type="date" class="" id="startDate" name="startDate" value="{{$disp['startDate']}}">&emsp;
   <label for="endDate">End Date:</label>
   <input type="date" class="" id="endDate" name="endDate" value="{{$disp['endDate']}}"><br><br>
-  <label for="duration">Duration:</label>
-  <input type="text" class="" id="duration" name="duration" value="{{$disp['duration']}}">
-  <label for="cost">Cost:</label>
+  <label for="duration">Duration (month):</label>
+  <input type="text" class="" id="duration" name="duration" value="{{$disp['duration']}}">&emsp;
+  <label for="cost">Cost: RM</label>
   <input type="text" class="" id="cost" name="cost" value="{{$disp['cost']}}"><br><br>
   <label for="client">Client Name:</label>
   <input type="text" class="" id="client" name="client" value="{{$disp['client']}}"><br><br>
@@ -127,7 +123,7 @@ https://templatemo.com/tm-545-finance-business
   <option value="Milestone 1">Milestone 1</option>
   <option value="Milestone 2">Milestone 2</option>
   <option value="Final Report">Final Report</option>
-</select>
+</select>&emsp;
 <label for="status">Project Status:</label>
 <select name="status" id="status" value="{{$disp['status']}}">
   <option value="On track">On track</option>
@@ -135,8 +131,22 @@ https://templatemo.com/tm-545-finance-business
   <option value="Extended">Extended</option>
   <option value="Completed">Completed</option>
 </select><br><br>
+
+<label for="pmember1">Choose Project Member 1:</label>
+<select name="pmember1" id="pmember1">
+@foreach($member as $x)
+<option value="{{$x['name']}}">{{$x['name']}}</option>
+    @endforeach
+</select>&emsp;
+
+    <label for="pmember2">Choose Project Member 2:</label>
+<select name="pmember2" id="pmember2">
+@foreach($member as $x)
+<option value="{{$x['name']}}">{{$x['name']}}</option>
+    @endforeach
+</select><br><br>
 <button type="submit" class="btn btn-primary">Update</button>
-<button type="reset" class="btn btn-primary">Reset</button>
+<button type="reset" class="btn btn-primary">Reset</button><br><br>
 </form>
 </div>
                 </div>
@@ -146,19 +156,17 @@ https://templatemo.com/tm-545-finance-business
           
         </div>
     </div>
-    <!-- Banner Ends Here -->
-
     
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/accordions.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <script src="/assets/js/owl.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/accordions.js"></script>
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

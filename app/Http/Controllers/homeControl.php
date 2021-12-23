@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 class homeControl extends Controller
@@ -29,13 +30,15 @@ class homeControl extends Controller
     function detail()
     {
         $data=Project::all();
-        return view('projectdetail',['member'=>$data]);
+        $x=User::all();
+        return view('member.projectdetail',['member'=>$data],['x'=>$x]);
     }
 
     function updatedetails($id)
     {
         $data=Project::find($id);
-        return view ('update',['disp'=>$data]);
+        $x=User::all();
+        return view ('member.update',['disp'=>$data],['member'=>$x]);
     }
 
     function updatepdetails(Request $req)
@@ -48,6 +51,8 @@ class homeControl extends Controller
         $member->client = $req->client ;
         $member->stage = $req->stage ;
         $member->status = $req->status ;
+        $member->member1 = $req->pmember1 ;
+        $member->member2 = $req->pmember2 ;
         $member->save();
 
         return redirect('/projectdetail');
@@ -57,6 +62,6 @@ class homeControl extends Controller
     function view($id)
     {
         $data=Project::find($id);
-        return view ('viewproject',['x'=>$data]);
+        return view ('member.viewproject',['x'=>$data]);
     }
 }

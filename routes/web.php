@@ -31,11 +31,17 @@ Route::POST("edit",[homeControl::class,'updatepdetails']);
 /* ========================= adminControl ============================ */
 Route::get("/createproject",[adminControl::class,"createpage"]);
 
-Route::get("/manageproject",[adminControl::class,"managepage"]);
+Route::get("/manageproject",[adminControl::class,"manageproject"]);
 
-Route::get("/list",[adminControl::class,"show"]);
+Route::get("/viewpdetail",[adminControl::class,"viewproject"]);
 
 Route::POST("create",[adminControl::class,'create']);
+
+Route::get("editproject/{id}",[adminControl::class,'editproj']);
+
+Route::POST("editproj",[adminControl::class,'updateproj']);
+
+Route::get("del/{id}",[adminControl::class,'deleteproj']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

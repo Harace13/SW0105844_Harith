@@ -10,9 +10,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/list">
+              <a class="nav-link" href="/manageproject">
                 <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
-                <span class="menu-title">List of User</span>
+                <span class="menu-title">Manage Project</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewpdetail">
+                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                <span class="menu-title">View All Project Details</span>
               </a>
             </li>
             

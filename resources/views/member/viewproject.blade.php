@@ -7,18 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" type="text/css">
 
     <title>UNITEN R&D SDN BHD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/flex-slider.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/templatemo-finance-business.css">
+    <link rel="stylesheet" href="../assets/css/owl.css">
 <!--
 
 Finance Business TemplateMo
@@ -59,11 +58,9 @@ https://templatemo.com/tm-545-finance-business
               </li>
               @auth
                     <li class="nav-item">
-                <a class="nav-link" href="">Project Details</a>
+                <a class="nav-link" href="/projectdetail">Project Details</a>
               </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/manageproj">Manage Project Details</a>
-              </li>
+            
               @endauth
 
             </ul>
@@ -100,37 +97,44 @@ https://templatemo.com/tm-545-finance-business
           <div class="item item-1">
             <div class="img-fill">
                 <div class="text-content">
-                <div class="container" style="border-radius: 5px;background-color: #ededed;padding: 20px;">
-      
-                <form action="/pdetail" method="post">
-            @csrf 
-  <div class="form-group">
-  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-  <thead>              
-   <tr>
-      <th>Project ID</th>
-      <th>Project Type</th>
-      <th>Project Name</th>
-      <th>Project Leader</th>
-                                
-      <th>Action</th>
-      </tr>
-      </thead>
-      <tbody>
-      @foreach ($member as $x)
-       <tr>
-          <td scope="row">{{ $x['id'] }}</td>
-          <td>{{$x['ptype']}} </td>
-          <td>{{$x['pname']}}</td>                
-          <td>{{$x['pleader']}}</td>
-            <td> <a href="{{"view/".$x['id']}}"><button type="button" class="btn btn-warning">View </button></a> </href> 
-<a href="{{"updateleader/".$x['id']}}"><button type="button" class="btn btn-primary">Edit </button></a> </href>     
-            </td>
-             </tr>
-  @endforeach
-  </tr>
-   </tbody>   
-</form>
+                <div class="container" style="padding: 20px;">
+           
+                <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Project ID</th>
+      <th scope="col">Project Type</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Project Leader</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Duration (month)</th>
+      <th scope="col">Cost (RM)</th>
+      <th scope="col">Client</th>
+      <th scope="col">Stage</th>
+      <th scope="col">Status</th>
+      <th scope="col">Member 1</th>
+      <th scope="col">Member 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color:white;">
+  <th scope="row">{{$x['id']}}</th>
+      <th scope="col">{{$x['ptype']}}</th>
+      <th scope="col">{{$x['pname']}}</th>
+      <th scope="col">{{$x['pleader']}}</th>
+      <th scope="col">{{$x['startDate']}}</th>
+      <th scope="col">{{$x['endDate']}}</th>
+      <th scope="col">{{$x['duration']}}</th>
+      <th scope="col">{{$x['cost']}}</th>
+      <th scope="col">{{$x['client']}}</th>
+      <th scope="col">{{$x['stage']}}</th>
+      <th scope="col">{{$x['status']}}</th>
+      <th scope="col">{{$x['member1']}}</th>
+      <th scope="col">{{$x['member2']}}</th>
+</tr>
+</tbody>
+</table>
 </div>
                 </div>
             </div>
@@ -144,14 +148,14 @@ https://templatemo.com/tm-545-finance-business
     
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/accordions.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <script src="/assets/js/owl.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/accordions.js"></script>
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

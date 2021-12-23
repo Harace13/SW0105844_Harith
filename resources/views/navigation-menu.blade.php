@@ -1,6 +1,5 @@
-<nav x-data="{ open: false }" class="">
+<nav x-data="{ open: false }">
     <!-- Primary Navigation Menu -->
-    
                 <!-- Logo -->
                 
 
