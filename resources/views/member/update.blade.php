@@ -119,6 +119,7 @@ https://templatemo.com/tm-545-finance-business
   <input type="text" class="" id="client" name="client" value="{{$disp['client']}}"><br><br>
   <label for="stage">Project Stage:</label>
   <select name="stage" id="stage" value="{{$disp['stage']}}">
+  <option hidden value="{{$disp['stage']}}">{{$disp['stage']}}</option>
   <option value="Inception">Inception</option>
   <option value="Milestone 1">Milestone 1</option>
   <option value="Milestone 2">Milestone 2</option>
@@ -126,6 +127,7 @@ https://templatemo.com/tm-545-finance-business
 </select>&emsp;
 <label for="status">Project Status:</label>
 <select name="status" id="status" value="{{$disp['status']}}">
+<option hidden value="{{$disp['status']}}">{{$disp['status']}}</option>
   <option value="On track">On track</option>
   <option value="Delayed">Delayed</option>
   <option value="Extended">Extended</option>
@@ -134,6 +136,7 @@ https://templatemo.com/tm-545-finance-business
 
 <label for="pmember1">Choose Project Member 1:</label>
 <select name="pmember1" id="pmember1">
+<option hidden value="{{$disp['member1']}}">{{$disp['member1']}}</option>
 @foreach($member as $x)
 <option value="{{$x['name']}}">{{$x['name']}}</option>
     @endforeach
@@ -141,6 +144,7 @@ https://templatemo.com/tm-545-finance-business
 
     <label for="pmember2">Choose Project Member 2:</label>
 <select name="pmember2" id="pmember2">
+<option hidden value="{{$disp['member2']}}">{{$disp['member2']}}</option>
 @foreach($member as $x)
 <option value="{{$x['name']}}">{{$x['name']}}</option>
     @endforeach

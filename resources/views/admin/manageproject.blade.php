@@ -42,6 +42,12 @@
   @endforeach
   </tr>
    </tbody>   
+   <span>{{$member->links()}}</span>
+   <style>
+     .w-5{
+       display:none;
+     }
+     </style>
 </div>
 </div>
           <!-- content-wrapper ends -->

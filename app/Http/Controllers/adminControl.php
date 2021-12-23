@@ -16,7 +16,7 @@ class adminControl extends Controller
 
     public function manageproject()
     {
-        $data=Project::all();
+        $data=Project::paginate(5);
         return view('admin.manageproject',['member'=>$data]);
     }
 
@@ -52,8 +52,8 @@ class adminControl extends Controller
 
     function viewproject()
     {
-        $data=Project::all();
-        return view('admin.viewproj',['x'=>$data]);
+        $data=Project::paginate(5);
+        return view('admin.viewproj',['member'=>$data]);
     }
 
     function deleteproj($id)

@@ -25,6 +25,7 @@
   <input type="text" class="" id="id" name="id" value="{{$disp['id']}}" readonly><br><br>
   <label for="ptype">Project Type:</label>
   <select name="ptype" id="ptype" value="{{$disp['ptype']}}">
+  <option hidden value="{{$disp['ptype']}}">{{$disp['ptype']}}</option>
   <option value="Consultancy Project">Consultancy Project</option>
   <option value="Research Project">Research Project</option> 
   </select><br><br>
@@ -34,7 +35,9 @@
 
   <label for="pleader">Choose Project Leader:</label>
 <select name="pleader" id="pleader" value="{{$disp['pleader']}}">
+<option hidden value="{{$disp['pleader']}}">{{$disp['pleader']}}</option>
 @foreach($member as $x)
+
 <option value="{{$x['name']}}">{{$x['name']}}</option>
     @endforeach
 </select><br><br>

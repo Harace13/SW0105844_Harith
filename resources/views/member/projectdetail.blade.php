@@ -121,15 +121,22 @@ https://templatemo.com/tm-545-finance-business
           <td>{{$x['pname']}}</td>                
           <td>{{$x['pleader']}}</td>
             <td> <a href="{{"view/".$x['id']}}"><button type="button" class="btn btn-warning">View </button></a> </href> 
-        
+        @if(Auth::user()->name==$x['pleader'])
             <a href="{{"updateleader/".$x['id']}}"><button type="button" class="btn btn-primary">Edit </button></a> </href>     
-  
+        @endif
             </td>
              </tr>
   @endforeach
   </tr>
    </tbody>   
+   <span>{{$member->links()}}</span>
 </form>
+
+  <style>
+    .w-5{
+      display:none;
+    }
+    </style>
 </div>
                 </div>
             </div>

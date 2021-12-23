@@ -29,15 +29,15 @@ class homeControl extends Controller
 
     function detail()
     {
-        $data=Project::all();
-        $x=User::all();
+        $data=Project::paginate(5);
+        $x=User::paginate(5);
         return view('member.projectdetail',['member'=>$data],['x'=>$x]);
     }
 
     function updatedetails($id)
     {
         $data=Project::find($id);
-        $x=User::all();
+        $x=User::paginate(5);
         return view ('member.update',['disp'=>$data],['member'=>$x]);
     }
 

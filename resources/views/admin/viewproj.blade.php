@@ -34,7 +34,7 @@
       <th scope="col">Member 2</th>
     </tr>
   </thead>
-  @foreach ($x as $x)
+  @foreach ($member as $x)
   <tbody>
     <tr style="background-color:white;">
  
@@ -57,6 +57,12 @@
 </tbody>
 @endforeach
 </table>
+<span>{{$member->links()}}</span>
+   <style>
+     .w-5{
+       display:none;
+     }
+     </style>
 </div>
 </div>
           <!-- content-wrapper ends -->
