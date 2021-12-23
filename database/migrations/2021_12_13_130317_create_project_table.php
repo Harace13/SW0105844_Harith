@@ -25,7 +25,8 @@ class CreateProjectTable extends Migration
             $table->string('client')->nullable();
             $table->string('stage')->nullable();
             $table->string('status')->nullable();
-            $table->string('pmember')->nullable();
+            $table->string('member1')->nullable();
+            $table->string('member2')->nullable();
         });
     }
 
